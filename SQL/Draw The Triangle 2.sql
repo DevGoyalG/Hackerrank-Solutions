@@ -1,0 +1,15 @@
+DELIMITER //
+
+CREATE PROCEDURE DrawPattern(n INT)
+BEGIN
+DECLARE i INT DEFAULT 0;
+WHILE i < n 
+DO
+SET i = i + 1;
+SELECT REPEAT('* ', i);
+END WHILE;
+
+END //
+
+DELIMITER ;
+CALL DrawPattern(20);
